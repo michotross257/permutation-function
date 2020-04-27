@@ -13,6 +13,8 @@ def permute(seq):
     """
     msg = "Arg 'seq' must be a sequence. See docs for typing.Sequence"
     assert isinstance(seq, Sequence), msg
+    if len(seq) < 2:
+        yield tuple(seq)
     if len(seq) == 2:
         for i in [(seq[0], seq[1]), (seq[1], seq[0])]:
             yield i
